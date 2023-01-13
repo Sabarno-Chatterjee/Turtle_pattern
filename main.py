@@ -10,13 +10,26 @@ def shape_shifter(num_of_sides):
 
 tim = Turtle()
 tim.shape("turtle")
+tim.pensize(5)
+tim.speed(0)
 colours = ["red", "black", "blue", "green", "yellow", "gold", "orange", "red", "maroon", "violet", "magenta", "purple",
            "navy", "blue", "skyblue", "cyan", "turquoise", "lightgreen", "green", "darkgreen", "chocolate", "brown",
            "black", "gray"]
 
-for num_of_sides in range(3, 11):
-    tim.pencolor(random.choice(colours))
-    shape_shifter(num_of_sides)
+# for num_of_sides in range(3, 11):
+#     tim.pencolor(random.choice(colours))
+#     shape_shifter(num_of_sides)
+for movement in range(100000):
+    tim.color(random.choice(colours))
+    direction = random.randint(0,1)
+    if direction:
+        tim.left(90)
+        tim.forward(20)
+    else:
+        tim.right(90)
+        tim.forward(20)
+
+
 
 screen = Screen()
 screen.exitonclick()
