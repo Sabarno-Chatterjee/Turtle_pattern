@@ -1,39 +1,26 @@
-from turtle import Turtle, Screen
+import turtle as t
 import random
 
 
-def shape_shifter(num_of_sides):
-    for _ in range(num_of_sides):
-        tim.forward(100)
-        tim.right(360 / num_of_sides)
+tim = t.Turtle()
+t.colormode(255)
 
-
-tim = Turtle()
-tim.shape("turtle")
-tim.pensize(10)
-tim.speed(0)
-colours = ["red", "black", "blue", "green", "yellow", "gold", "orange", "red", "maroon", "violet", "magenta", "purple",
-           "navy", "blue", "skyblue", "cyan", "turquoise", "lightgreen", "green", "darkgreen", "chocolate", "brown",
-           "black", "gray"]
-
-# for num_of_sides in range(3, 11):
-#     tim.pencolor(random.choice(colours))
-#     shape_shifter(num_of_sides)
-# for movement in range(100000):
-#     tim.color(random.choice(colours))
-#     direction = random.randint(0,1)
-#     if direction:
-#         tim.left(90)
-#         tim.forward(20)
-#     else:
-#         tim.right(90)
-#         tim.forward(20)
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
 
 directions = [0, 90, 180, 270]
-for _ in range(300):
-    tim.pencolor(random.choice(colours))
+tim.pensize(10)
+tim.speed(0)
+
+
+for _ in range(10000):
+    tim.pencolor(random_color())
     tim.setheading(random.choice(directions))
     tim.forward(30)
 
-screen = Screen()
+screen = t.Screen()
 screen.exitonclick()
