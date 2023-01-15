@@ -1,9 +1,9 @@
 import turtle as t
 import random
 
-
 tim = t.Turtle()
 t.colormode(255)
+
 
 def random_color():
     r = random.randint(0, 255)
@@ -12,15 +12,19 @@ def random_color():
     random_color = (r, g, b)
     return random_color
 
-directions = [0, 90, 180, 270]
-tim.pensize(10)
-tim.speed(0)
+
+tim.pensize(1)
+tim.speed("fastest")
 
 
-for _ in range(10000):
-    tim.pencolor(random_color())
-    tim.setheading(random.choice(directions))
-    tim.forward(30)
+def draw_spirograph(tilt):
+    for _ in range(int(360 / tilt)):
+        tim.pencolor(random_color())
+        tim.circle(100)
+        tim.setheading(tim.heading() + tilt)
+
+
+draw_spirograph(5)
 
 screen = t.Screen()
 screen.exitonclick()
