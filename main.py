@@ -40,7 +40,7 @@ tim.setheading(0)
 
 for _ in range(10):
     color = random.choice(design_shades)
-    tim.dot(20,color)
+    tim.dot(10,color)
     tim.forward(50)
 for _ in range(9):
     tim.setheading(90)
@@ -50,7 +50,7 @@ for _ in range(9):
     tim.setheading(0)
     for _ in range(10):
         color = random.choice(design_shades)
-        tim.dot(20,color)
+        tim.dot(10,color)
         tim.forward(50)
 
 turtle.exitonclick()
